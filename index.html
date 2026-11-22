@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>Cafe Thikana · Premium Family Restaurant</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- QR Code generator -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     LOADING SCREEN
+     ============================================================ -->
+<div id="loader">
+  <img src="logo.png" alt="Cafe Thikana" class="loader-logo" onerror="this.style.display='none';this.parentElement.innerHTML='<h2 style=\'font-family:Playfair Display,serif;color:#C6A15B;font-size:2rem;\'>CAFE THIKANA</h2>'">
+</div>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#" class="nav-logo" id="logoHome">
+      <img src="logo.png" alt="Cafe Thikana" onerror="this.alt='CAFE THIKANA';this.style.height='30px';this.style.width='auto';this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 60\'><text x=\'0\' y=\'40\' font-family=\'Playfair Display,serif\' font-size=\'28\' fill=\'%23C6A15B\'>CAFE THIKANA</text></svg>'">
+    </a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#menu">Our Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#celebrations">Celebrations</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-sm btn-outline" id="adminLoginBtn" style="padding:8px 20px;font-size:0.7rem;">Admin</button>
+      <a href="#reservation" class="btn btn-sm" style="padding:8px 24px;font-size:0.7rem;">Book a Table</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenuBtn">&times;</button>
+  <a href="#home" class="mobile-link">Home</a>
+  <a href="#about" class="mobile-link">About Us</a>
+  <a href="#menu" class="mobile-link">Our Menu</a>
+  <a href="#gallery" class="mobile-link">Gallery</a>
+  <a href="#celebrations" class="mobile-link">Celebrations</a>
+  <a href="#reviews" class="mobile-link">Reviews</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="#reservation" class="mobile-link">Book a Table</a>
+</div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>WELCOME TO <span>CAFE THIKANA</span></h1>
+    <p class="hero-sub">Where Every Meal Feels Like Home.</p>
+    <p class="hero-desc">Experience premium family dining in the heart of Rewa — warm hospitality, elegant ambience, and flavours that linger.</p>
+    <div class="hero-buttons">
+      <a href="#menu" class="btn">Explore Our Menu</a>
+      <a href="#reservation" class="btn btn-outline">Reserve Your Table</a>
+    </div>
+  </div>
+  <div class="floating-dot" style="width:120px;height:120px;top:20%;left:8%;animation-delay:0s;"></div>
+  <div class="floating-dot" style="width:80px;height:80px;bottom:20%;right:12%;animation-delay:3s;"></div>
+  <div class="floating-dot" style="width:60px;height:60px;top:60%;left:18%;animation-delay:6s;"></div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div class="about-img">
+        <img src="interior1.jpg" alt="Cafe Thikana Interior" onerror="this.src='https://placehold.co/600x400/1C1B1A/C6A15B?text=Cafe+Thikana'">
+      </div>
+      <div class="about-text">
+        <h2>A Place to Feel at Home</h2>
+        <p>Cafe Thikana is a welcoming family restaurant in Rewa, offering a memorable dining atmosphere, celebrations and quality hospitality. Our warm interiors, attentive service, and thoughtfully curated menu make every visit special.</p>
+        <p>Whether it's an intimate dinner, a birthday celebration, or a casual family gathering, we promise an experience steeped in Indian warmth and elegance.</p>
+        <div class="stats">
+          <div class="stat-item"><h3>12+</h3><p>Years of Hospitality</p></div>
+          <div class="stat-item"><h3>50k+</h3><p>Happy Guests</p></div>
+          <div class="stat-item"><h3>4.8★</h3><p>Average Rating</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MENU
+     ============================================================ -->
+<section id="menu" class="section" style="background: var(--charcoal);">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title">Our Menu</h2>
+      <p class="section-subtitle">A curated selection of flavours — from hearty Indian mains to Asian favourites.</p>
+    </div>
+    <div class="menu-controls reveal">
+      <div class="filter-btns" id="menuFilters">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="Starters">Starters</button>
+        <button class="filter-btn" data-cat="Indian Main Course">Indian Main</button>
+        <button class="filter-btn" data-cat="Chinese">Chinese</button>
+        <button class="filter-btn" data-cat="Pizza and Pasta">Pizza & Pasta</button>
+        <button class="filter-btn" data-cat="Snacks">Snacks</button>
+        <button class="filter-btn" data-cat="Beverages">Beverages</button>
+        <button class="filter-btn" data-cat="Desserts">Desserts</button>
+      </div>
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="menuSearch" placeholder="Search dishes...">
+      </div>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY
+     ============================================================ -->
+<section id="gallery" class="section">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title">Gallery</h2>
+      <p class="section-subtitle">A glimpse into the Cafe Thikana experience.</p>
+    </div>
+    <div class="gallery-filters reveal">
+      <button class="filter-btn active" data-gcat="all">All</button>
+      <button class="filter-btn" data-gcat="Interiors">Interiors</button>
+      <button class="filter-btn" data-gcat="Dining">Dining</button>
+      <button class="filter-btn" data-gcat="Celebrations">Celebrations</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CELEBRATIONS
+     ============================================================ -->
+<section id="celebrations" class="section" style="background: var(--charcoal);">
+  <div class="container">
+    <div class="celebration-grid reveal">
+      <div class="celebration-img">
+        <img src="birthday.jpg" alt="Birthday Celebration" onerror="this.src='https://placehold.co/600x400/1C1B1A/C6A15B?text=Celebrations'">
+      </div>
+      <div class="celebration-text">
+        <h2>Celebrate Your Special Moments With Us</h2>
+        <p style="color:var(--text-muted);">From birthdays to anniversaries, we create unforgettable memories with personalised décor, custom menus, and warm hospitality.</p>
+        <ul>
+          <li><i class="fas fa-birthday-cake"></i> Birthday Celebrations</li>
+          <li><i class="fas fa-heart"></i> Anniversary Dinners</li>
+          <li><i class="fas fa-users"></i> Family Gatherings</li>
+          <li><i class="fas fa-door-closed"></i> Private Dining</li>
+          <li><i class="fas fa-star"></i> Special Occasions</li>
+        </ul>
+        <a href="#reservation" class="btn">Plan Your Celebration</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REVIEWS
+     ============================================================ -->
+<section id="reviews" class="section">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title">Guest Reviews</h2>
+      <p class="section-subtitle">Sample reviews — authentic feedback coming soon.</p>
+    </div>
+    <div class="review-carousel" id="reviewCarousel"></div>
+    <div class="review-actions">
+      <button class="btn btn-outline btn-sm" id="writeReviewBtn">Write a Review</button>
+      <a href="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID" target="_blank" class="btn btn-dark btn-sm" id="googleReviewBtn"><i class="fab fa-google"></i> Google Reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESERVATION & CONTACT
+     ============================================================ -->
+<section id="reservation" class="section" style="background: var(--charcoal);">
+  <div class="container">
+    <div class="reserve-grid reveal">
+      <div>
+        <h2 class="section-title">Reserve Your Table</h2>
+        <p class="section-subtitle">We'll confirm your booking shortly.</p>
+        <form id="reservationForm">
+          <div class="form-group"><label>Full Name *</label><input type="text" id="resName" required></div>
+          <div class="form-group"><label>Mobile Number *</label><input type="tel" id="resPhone" required></div>
+          <div class="form-group"><label>Date *</label><input type="date" id="resDate" required></div>
+          <div class="form-group"><label>Time *</label><input type="time" id="resTime" required></div>
+          <div class="form-group"><label>Number of Guests *</label><select id="resGuests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10+</option></select></div>
+          <div class="form-group"><label>Special Requests</label><textarea id="resNotes" placeholder="Birthday, anniversary, seating preference..."></textarea></div>
+          <button type="submit" class="btn w-100">Request Reservation</button>
+          <p style="font-size:0.7rem;color:var(--text-muted);margin-top:12px;"><i class="fas fa-info-circle"></i> This is a request, not a confirmed booking. Our team will contact you.</p>
+        </form>
+        <div id="reservationMsg" style="margin-top:16px;"></div>
+      </div>
+      <div id="contact">
+        <h2 class="section-title">Contact & Location</h2>
+        <div class="info-block">
+          <div class="info-item"><i class="fas fa-map-pin"></i><div><strong>Cafe Thikana – Family Restaurant</strong><span>Tala House, Rewa, Madhya Pradesh, India</span></div></div>
+          <div class="info-item"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><span>09399799980</span></div></div>
+          <div class="info-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><span>cafethikana2.0@gmail.com</span></div></div>
+          <div class="info-item"><i class="fas fa-clock"></i><div><strong>Opening Hours</strong><span>Mon–Sun: 11:00 AM – 11:00 PM</span></div></div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">
+          <a href="tel:09399799980" class="btn btn-sm"><i class="fas fa-phone"></i> Call Now</a>
+          <a href="mailto:cafethikana2.0@gmail.com" class="btn btn-sm btn-outline"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://wa.me/919399799980" target="_blank" class="btn btn-sm btn-outline" style="border-color:#25d366;color:#25d366;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3632.926475599504!2d81.2933!3d24.5333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDMyJzAwLjAiTiA4McKwMTcnMzUuOSJF!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Cafe Thikana" onerror="this.style.display='none'">
+        <p>Where every meal feels like home. Premium family dining in Rewa.</p>
+        <div class="footer-social">
+          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div><h5>Quick Links</h5><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#menu">Menu</a></li><li><a href="#gallery">Gallery</a></li></ul></div>
+      <div><h5>Info</h5><ul><li><a href="#celebrations">Celebrations</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#reservation">Reservations</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h5>Visit Us</h5><ul><li>Tala House, Rewa, MP</li><li>09399799980</li><li>cafethikana2.0@gmail.com</li><li>11:00 AM – 11:00 PM</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Cafe Thikana. All rights reserved.</span>
+      <span>Designed with <i class="fas fa-heart" style="color:var(--burgundy);"></i> in Rewa</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING BUTTONS
+     ============================================================ -->
+<a href="https://wa.me/919399799980" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<button class="back-top" id="backTopBtn"><i class="fas fa-chevron-up"></i></button>
+
+<!-- ============================================================
+     LIGHTBOX
+     ============================================================ -->
+<div class="lightbox" id="lightbox">
+  <span class="close-lightbox" id="closeLightbox">&times;</span>
+  <img src="" alt="Gallery Image" id="lightboxImg">
+</div>
+
+<!-- ============================================================
+     ADMIN DASHBOARD
+     ============================================================ -->
+<div class="admin-section" id="adminSection">
+  <div class="admin-topbar">
+    <h2><i class="fas fa-chart-pie"></i> Cafe Thikana · Admin Dashboard</h2>
+    <span class="admin-close" id="adminCloseBtn">&times;</span>
+  </div>
+  <div class="admin-tabs" id="adminTabs">
+    <button class="admin-tab active" data-atab="dashboard">Dashboard</button>
+    <button class="admin-tab" data-atab="orders">Orders</button>
+    <button class="admin-tab" data-atab="kitchen">Kitchen (KDS)</button>
+    <button class="admin-tab" data-atab="tables">Tables</button>
+    <button class="admin-tab" data-atab="qr">QR Codes</button>
+    <button class="admin-tab" data-atab="menuMgmt">Menu Mgmt</button>
+    <button class="admin-tab" data-atab="customers">Customers</button>
+    <button class="admin-tab" data-atab="reviewsMgmt">Reviews</button>
+    <button class="admin-tab" data-atab="reports">Reports</button>
+    <button class="admin-tab" data-atab="settings">Settings</button>
+  </div>
+
+  <!-- Dashboard Panel -->
+  <div class="admin-panel active" id="panel-dashboard">
+    <div class="dash-cards" id="dashCards"></div>
+    <div class="chart-row">
+      <div class="chart-box"><canvas id="revenueChart"></canvas></div>
+      <div class="chart-box"><canvas id="topItemsChart"></canvas></div>
+    </div>
+    <h3 style="margin-bottom:12px;font-family:var(--font-heading);">Recent Orders</h3>
+    <div style="overflow-x:auto;"><table class="order-table" id="recentOrdersTable"><thead><tr><th>Order</th><th>Table</th><th>Items</th><th>Total</th><th>Status</th></tr></thead><tbody></tbody></table></div>
+  </div>
+
+  <!-- Orders Panel -->
+  <div class="admin-panel" id="panel-orders">
+    <h3 style="margin-bottom:16px;font-family:var(--font-heading);">All Orders</h3>
+    <div style="overflow-x:auto;"><table class="order-table" id="allOrdersTable"><thead><tr><th>Order</th><th>Table</th><th>Items</th><th>Total</th><th>Status</th><th>Actions</th></tr></thead><tbody></tbody></table></div>
+  </div>
+
+  <!-- Kitchen Panel -->
+  <div class="admin-panel" id="panel-kitchen">
+    <h3 style="margin-bottom:16px;font-family:var(--font-heading);">Kitchen Display System</h3>
+    <div id="kitchenOrders" class="card-list"></div>
+  </div>
+
+  <!-- Tables Panel -->
+  <div class="admin-panel" id="panel-tables">
+    <h3 style="margin-bottom:16px;font-family:var(--font-heading);">Table Management</h3>
+    <div class="table-grid" id="adminTableGrid"></div>
+  </div>
+
+  <!-- QR Panel -->
+  <div class="admin-panel" id="panel-qr">
+    <h3 style="margin-bottom:16px;font-family:var(--font-heading);">Table QR Codes</h3>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:16px;">Scan to open menu with table auto-detected. Demo: table parameter in URL.</p>
+    <div class="qr-container" id="qrContainer"></div>
+  </div>
+
+  <!-- Menu Management Panel -->
+  <div class="admin-panel" id="panel-menuMgmt">
+    <h3 style="margin-bottom:16px;font-family:var(--font-heading);">Menu Management</h3>
+    <div id="menuMgmtList" class="card-list"></div>
+    <div style="margin-top:24px;">
+      <h4 style="margin-bottom:12px;">Add New Item</h4>
+      <div class="admin-form-row">
+        <div class="form-group"><label>Name</label><input type="text" id="newItemName"></div>
+        <div class="form-group"><label>Price (₹)</label><input type="number" id="newItemPrice"></div>
+      </div>
+      <div class="admin-form-row">
+        <div class="form-group"><label>Category</label><select id="newItemCat"><option>Starters</option><option>Indian Main Course</option><option>Chinese</option><option>Pizza and Pasta</option><option>Snacks</option><option>Beverages</option><option>Desserts</option></select></div>
+        <div class="form-group"><label>Veg?</label><select id="newItemVeg"><option value="veg">Veg</option><option value="nonveg">Non-Veg</option></select></div>
+      </div>
+      <div class="form-group"><label>Description</label><input type="text" id="newItemDesc"></div>
+      <button class="btn btn-sm" id="addMenuItemBtn">Add Item</button>
+    </div>
+  </div>
+
+  <!-- Customers Panel -->
+  <div class="admin-panel" id="panel-customers">
+    <h3 style="margin-bottom:16px;font-family:var(--font-heading);">Customer Database</h3>
+    <div id="customerList" class="card-list"></div>
+  </div>
+
+  <!-- Reviews Management Panel -->
+  <div class="admin-panel" id="panel-reviewsMgmt">
+    <h3 style="margin-bottom:16px;font-family:var(--font-heading);">Review Management</h3>
+    <div id="adminReviewList" class="card-list"></div>
+  </div>
+
+  <!-- Reports Panel -->
+  <div class="admin-panel" id="panel-reports">
+    <h3 style="margin-bottom:16px;font-family:var(--font-heading);">Reports & Analytics</h3>
+    <div class="chart-row">
+      <div class="chart-box"><canvas id="dailyRevenueChart"></canvas></div>
+      <div class="chart-box"><canvas id="paymentDistChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Settings Panel -->
+  <div class="admin-panel" id="panel-settings">
+    <h3 style="margin-bottom:16px;font-family:var(--font-heading);">Restaurant Settings</h3>
+    <div class="admin-form-row">
+      <div class="form-group"><label>Restaurant Name</label><input type="text" id="setName" value="Cafe Thikana"></div>
+      <div class="form-group"><label>Phone</label><input type="text" id="setPhone" value="09399799980"></div>
+    </div>
+    <div class="admin-form-row">
+      <div class="form-group"><label>Email</label><input type="text" id="setEmail" value="cafethikana2.0@gmail.com"></div>
+      <div class="form-group"><label>Tax Rate (%)</label><input type="number" id="setTax" value="5"></div>
+    </div>
+    <button class="btn btn-sm mt-4" id="saveSettingsBtn">Save Settings</button>
+    <p style="font-size:0.75rem;color:var(--text-muted);margin-top:12px;"><i class="fas fa-info-circle"></i> Settings are demo-only and stored in localStorage.</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     CART MODAL
+     ============================================================ -->
+<div class="cart-modal" id="cartModal">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h3><i class="fas fa-shopping-bag" style="color:var(--gold);"></i> Your Cart</h3>
+    <button id="closeCartBtn" style="font-size:1.6rem;">&times;</button>
+  </div>
+  <div id="cartItems"></div>
+  <div class="cart-total"><span>Total</span><span id="cartTotal">₹0</span></div>
+  <button class="btn w-100" id="placeOrderBtn">Place Order (Demo)</button>
+</div>
+
+<!-- ============================================================
+     TOAST
+     ============================================================ -->
+<div class="toast" id="toast"></div>
+
+<!-- ============================================================
+     REVIEW MODAL
+     ============================================================ -->
+<div id="reviewModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:2500;display:none;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:var(--charcoal);border-radius:20px;padding:32px;max-width:480px;width:100%;">
+    <h3 style="font-family:var(--font-heading);margin-bottom:16px;">Write a Review</h3>
+    <div class="form-group"><label>Name</label><input type="text" id="revName" placeholder="Your name"></div>
+    <div class="form-group"><label>Rating</label>
+      <div class="star-input" id="starInput">
+        <span data-star="1">★</span><span data-star="2">★</span><span data-star="3">★</span><span data-star="4">★</span><span data-star="5">★</span>
+      </div>
+    </div>
+    <div class="form-group"><label>Review</label><textarea id="revText" placeholder="Share your experience..."></textarea></div>
+    <div style="display:flex;gap:12px;margin-top:16px;">
+      <button class="btn btn-sm" id="submitReviewBtn">Submit Review</button>
+      <button class="btn btn-sm btn-outline" id="cancelReviewBtn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MAIN SCRIPT
+     ============================================================ -->
+<script src="script.js"></script>
+</body>
+</html>
